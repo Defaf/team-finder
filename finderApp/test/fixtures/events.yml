@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nameEvent: MyString
+  description: MyString
+  date: 2019-06-15
+  time: 2019-06-15 00:57:18
+  duration: MyString
+  team: MyString
+  location: MyString
+
+two:
+  nameEvent: MyString
+  description: MyString
+  date: 2019-06-15
+  time: 2019-06-15 00:57:18
+  duration: MyString
+  team: MyString
+  location: MyString
