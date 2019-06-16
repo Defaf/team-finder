@@ -1,1 +1,20 @@
-<h1>Hello, Welcome to my App !<h1>
+
+<% if user_signed_in? %>
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Date </th>
+    </tr>
+
+    <% @events.each do |event|  %>
+        <tr>
+        <td> <%= event.nameEvent %> </td>
+        <td> <%= event.description %> </td>
+        <td> <%= event.date %> </td>
+        <% if current_user.id == event.user_id %>
+            <td><%= link_to 'See more..', event %>  </td>
+        <% end %>
+        </tr>
+    <% end %>
+<% end %>

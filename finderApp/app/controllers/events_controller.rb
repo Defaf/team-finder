@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    #Event.all
+    #Event.all     
     @events = current_user.events
   end
 
