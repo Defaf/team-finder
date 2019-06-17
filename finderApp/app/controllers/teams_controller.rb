@@ -27,16 +27,15 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = @event.teams.new(team_params)
-    
     respond_to do |format|
       if @team.save
-        format.html { redirect_to event_team_path(@event, @team), notice: 'Team was successfully created.' }
-        format.json { render :show, status: :created, location: @team }
+          format.html { redirect_to event_team_path(@event, @team), notice: 'Team was successfully created.' }
+          format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
         format.json { render json: @team.errors, status: :unprocessable_entity }
       end
-    end
+    end 
   end
 
   # PATCH/PUT /teams/1
@@ -69,9 +68,10 @@ class TeamsController < ApplicationController
       @team = @event.teams.find(params[:id])
     end
 
-      def set_event 
-        @event = Event.find(params[:event_id])
-      end
+    def set_event 
+      @event = Event.find(params[:event_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name, :members, :event_id)

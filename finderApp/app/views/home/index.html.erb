@@ -12,9 +12,7 @@
         <td> <%= event.nameEvent %> </td>
         <td> <%= event.description %> </td>
         <td> <%= event.date %> </td>
-        <% if current_user.id == event.user_id %>
             <td><%= link_to 'See more..', event %>  </td>
-        <% end %>
         </tr>
     <% end %>
 <% end %>
