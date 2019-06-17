@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :teams
-  resources :events
+  resources :events do 
+    resources :teams
+  end
   devise_for :users
    # In `config/boot.rb`
    ENV['EXECJS_RUNTIME'] = 'Node'
