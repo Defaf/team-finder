@@ -1,0 +1,6 @@
+<h1>Editing Member</h1>
+
+<%= render 'form', member: @member %>
+
+<%= link_to 'Show', edit_event_team_member_path (@event, @team,@member) %> |
+<%= link_to 'Back', event_team_members_path (@team) %>
