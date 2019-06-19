@@ -253,9 +253,15 @@ header {
 
   }
 
+/*  ----------------------------------------------------
+3 user login and sign up
+-------------------------------------------------------- */
+.account_container{
+  margin-left: 50px;
+}
 
-  /*  ----------------------------------------------------
-3 welcome user 
+/*  ----------------------------------------------------
+4 welcome user 
 -------------------------------------------------------- */
 .welcome_user{
   background-color: gray;
@@ -549,4 +555,52 @@ footer .newsletter_form .form-control {
 .footer_logo{
   height: 80px;
   width: 120px;
+}
+/*  ----------------------------------------------------
+7 Formes
+-------------------------------------------------------- */
+.form-container{
+  margin: 0px 70px 0px 170px; 
+  padding-right: 500px;
+}
+
+.fix_btn{
+  margin-top: -93px;
+  margin-left: 390px;
+}
+
+.btn_postion{
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.show_btn_postion{
+  margin-top: -56px;
+  margin-left: 330px;
+}
+
+.back_btn_postion{
+  margin-top: -46px;
+  margin-left: 470px;
+}
+
+.margin-btn{
+  margin-left: 400px;
+
+}
+
+/*  ----------------------------------------------------
+7 Tables
+-------------------------------------------------------- */
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
+/*  ----------------------------------------------------
+7 margin and padding content
+-------------------------------------------------------- */
+.event_show_margin{
+  margin-left: 400px;
 }

@@ -2,14 +2,19 @@
 <% if user_signed_in? %>
     <%= render 'form', event: @event %>
 
-    <%= link_to 'Show', @event %> |
-    <%= link_to 'Back', events_path %>
+    <div class="show_btn_postion">
+        <%= link_to 'Show', @event , class:"btn btn-primary" %> 
+    </div>
+    <div class="back_btn_postion">
+        <%= link_to 'Back', events_path, class:"btn btn-primary" %>
+    <//div>
+    
 <% else %>
 
     <p>you have to logged in </p>
-    <%= link_to 'Back', event_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Sing in", new_user_session_path %>
+    <%= link_to 'Back', event_path, class:"btn btn-primary" %>
+    <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-primary" %>
+    <%= link_to "Sing in", new_user_session_path, class:"btn btn-primary" %>
 <% end %>
 
 

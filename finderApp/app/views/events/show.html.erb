@@ -1,51 +1,55 @@
-<p id="notice"><%= notice %></p>
+<section class="event_show_margin">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name event:</strong>
-  <%= @event.nameEvent %>
-</p>
+    <p>
+      <strong>Event Name:</strong>
+      <%= @event.nameEvent %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @event.description %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+    <p>
+      <strong>Date:</strong>
+      <%= @event.date %>
+    </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @event.time %>
-</p>
+    <p>
+      <strong>Time:</strong>
+      <%= @event.time %>
+    </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @event.duration %>
-</p>
+    <p>
+      <strong>Duration:</strong>
+      <%= @event.duration %>
+    </p>
 
-<p>
-  <strong>Team:</strong>
-  <%= @event.team %>
-</p>
+    <p>
+      <strong>Team:</strong>
+      <%= @event.team %>
+    </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-<% if user_signed_in? %>
-  <% if @event.user_id == current_user.id  %>
-    <%= link_to 'Edit', edit_event_path(@event) %> |
-  <% end %>
-  <%= link_to 'Create Team', new_event_team_path(@event) %> |
-  <%= link_to 'Join to Team', event_teams_path(@event) %> |
-  <%= link_to 'My Events', events_path %>
-  <%= link_to 'Back', home_path %>
+    <p>
+      <strong>Location:</strong>
+      <%= @event.location %>
+    </p>
+</section>
+<br>
+<section class="margin-btn">
+    <% if user_signed_in? %>
+      <% if @event.user_id == current_user.id  %>
+        <%= link_to 'Edit', edit_event_path(@event),class:"btn btn-primary" %> 
+      <% end %>
+      <%= link_to 'Create Team', new_event_team_path(@event),class:"btn btn-primary" %> 
+      <%= link_to 'Join to Team', event_teams_path(@event),class:"btn btn-primary" %> 
+      <%= link_to 'Back', home_path, class:"btn btn-primary" %>
 
-<% else %>
-  <%= link_to 'Back', home_path %>
-  
-<% end %>
+    <% else %>
+      <%= link_to 'Back', home_path ,class:"btn btn-primary"%>
+      
+    <% end %>
+</section>
 
  

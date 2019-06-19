@@ -1,52 +1,56 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="form-container col-12 col-md-8">
+  <%= form_with(model: event, local: true) do |form| %>
+    <% if event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :Event_Name %>
+      <%= form.text_field :nameEvent ,class:"form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description, class:"form-control"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :date %>
+      <%= form.date_select :date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :time %>
+      <%= form.time_select :time %>
+    </div>
+
+    <div class="field">
+      <%= form.label :duration %>
+      <%= form.text_field :duration ,class:"form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :team %>
+      <%= form.text_field :team,class:"form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= form.label :location %>
+      <%= form.text_field :location,class:"form-control"  %>
+    </div>
+
+    
+    <div class="actions">
+      <%= form.submit "Submit", class:"btn btn-primary" %>      
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nameEvent %>
-    <%= form.text_field :nameEvent %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.time_select :time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.text_field :duration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :team %>
-    <%= form.text_field :team %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
