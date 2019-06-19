@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :events do 
-    resources :teams
+    resources :teams do 
+      resources :members
+    end 
   end
   
   devise_for :users
