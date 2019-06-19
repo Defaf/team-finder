@@ -16,14 +16,12 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.name %></td>
-        <td><%= team.members %></td>
+        <td><%= team.num_members %></td>
         <td><%= team.event_id %></td>
         <td><%= link_to 'Show', event_team_path(@event, team) %></td>
-        <td><%= link_to 'Edit', edit_event_team_path(@event, team) %></td>
-        <td><%= link_to 'Destroy', event_team_path(@event, team), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Join' %></td>
+        <td><%= link_to 'Join', event_team_members_path(@event, team), {method: :post}	 %></td>
         </tr>
-    <% end %>
+    <% end %> 
   </tbody>
 </table>
 

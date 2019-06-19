@@ -11,7 +11,7 @@
 </p>
 <p>
   <strong>Members:</strong>
-  <%= @team.members %>
+  <%= @team.num_members %>
 </p>
 
 <p>
@@ -19,6 +19,21 @@
   <%= @team.event_id %>
 </p>
 
+<p>Team Members</p>
+<ul>
+  <% @team.members.each do |member| %>
+    <li><%= member.user.email %> </li>
+  <% end %>
+</ul>
 
-<%= link_to 'Edit', edit_event_team_path(@event, @team) %> |
-<%= link_to 'Back', event_teams_path(@event) %>
+<% if @team.user_id == current_user.id  %>
+  <%= link_to 'Edit', edit_event_team_path(@event, @team) %> |
+  <%= link_to 'Destroy', event_team_path(@event, @team), method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back', event_teams_path(@event) %>
+<% else%>
+
+  <%= link_to 'Join', event_team_members_path(@event, @team), {method: :post}	 %>
+  <%= link_to 'Back', event_teams_path(@event) %>
+<% end%>
+
+

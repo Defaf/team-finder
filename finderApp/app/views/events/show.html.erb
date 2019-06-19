@@ -34,8 +34,18 @@
   <strong>Location:</strong>
   <%= @event.location %>
 </p>
+<% if user_signed_in? %>
+  <% if @event.user_id == current_user.id  %>
+    <%= link_to 'Edit', edit_event_path(@event) %> |
+  <% end %>
+  <%= link_to 'Create Team', new_event_team_path(@event) %> |
+  <%= link_to 'Join to Team', event_teams_path(@event) %> |
+  <%= link_to 'My Events', events_path %>
+  <%= link_to 'Back', home_path %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Create Team', new_event_team_path(@event) %> |
-<%= link_to 'Join to Team', event_teams_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% else %>
+  <%= link_to 'Back', home_path %>
+  
+<% end %>
+
+ 
