@@ -36,139 +36,39 @@
                     </li>
                 <% end%>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Contact</a>
+                    <a class="nav-link " href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
+          <section class="welcome_user">
+            <div class="container">
+              <% if user_signed_in? %>
+              
+                <h5 class="welcom_message"><span>Welcome</span> <%= current_user.email %></h5>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "link_color  btn btn-sm-primary btn-rounded" %>
+                  <%= link_to "Change passwrod", edit_user_registration_path , class: "link_color  btn btn-sm-primary btn-rounded" %>
+              <% end %>
+            </div>
+    </section>
     </div>
 </header>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <section class="welcome_user">
-    <div class="container">
-      <% if user_signed_in? %>
-      
-        <h4>welcome <%= current_user.email %></h4>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "link_color" %>
-          <%= link_to "Change passwrod", edit_user_registration_path , class: "link_color" %>
-
-        <% else %>
-          <%= link_to "Sign Up", new_user_registration_path %>
-          <%= link_to "Sing in", new_user_session_path %>
-      <% end %>
-    </div>
-  </section>
+  
   
   
     <%= yield %>
 
 
-<!--cover section -->
-<section id="home" class="home-cover">
-    <div class="cover_slider owl-carousel owl-theme">
-        <%= image_tag ("cover.jpg") ,class:"cover_item" %>
-             <div class="slider_content">
-                <div class="slider-content-inner">
-                    <div class="container">
-                        <div class="slider-content-center uppercase">
-                            <h2 class="cover-title "> Prepare yourself for the </h2>
-                            <strong class="cover-subtitle">Events and Hackathons</strong>
-                            <p class="cover-ad">  Make your team now !! </p>
-                            <br>
-                            <%= link_to "Sign up",  new_user_registration_path,  class:" btn btn-primary btn-rounded" %>
-                            <%= link_to "Sign in",  new_user_session_path,  class:" btn btn-primary btn-rounded" %>
-
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--cover section slider end -->
-
-<!--about us -->
-<section class="container-about" id="aboutUs">
-    <div class="section_title">
-        <h3 class="title"> About Us </h3>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-            <p>
-              something  something something something  something something something  something something             
-            </p>
-        </div>
-        <div class="col-12 col-md-6">
-            <p>
-            something  something something something  something something something  something something
-            </p>
-        </div>
-    </div>
-
-    <br><br>
-
-    <!--event features-->
-    <div class="row justify-content-center mt30">
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="icon_box_one">
-                <i class="lnr lnr-mic"></i>
-                <div class="content">
-                    <h4>Create Event</h4>
-                    <p>
-                    something  something something something  something something something  something something
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="icon_box_one">
-                <i class="lnr lnr-rocket"></i>
-                <div class="content">
-                    <h4>Make a team</h4>
-                    <p>
-                    something  something something something  something something something  something something
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="icon_box_one">
-                <i class="lnr lnr-bullhorn"></i>
-                <div class="content">
-                    <h4>Join to a team</h4>
-                    <p>
-                    something  something something something  something something something  something something
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="icon_box_one">
-                <i class="lnr lnr-clock"></i>
-                <div class="content">
-                    <h4>Enjoy !!</h4>
-                    <p>
-                    something  something something something  something something something  something something
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--event features end-->
-</section>
-<!--about the event end -->
 
 <br><br>
 
 <!--footer start -->
 <footer>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="contact">
 
             <div class="col-md-4 col-12">
                 <div class="footer_box">
@@ -179,7 +79,8 @@
                     </div>
                     <div class="footer_box_body">
                         <p>
-                        something  something something something  something something something  something something
+                        We are a startup for entertainment, want to make the participation and organizing in entertainmnets event 
+                        easier, creative and faster than before. 
                         </p>
                         <ul class="footer_social">
                             <li>
@@ -202,6 +103,9 @@
                         <h4 class="footer_title">
                             Location
                         </h4>
+                        <p>Saudi Arabia, Makkah </p>
+                        <p>Box. 45457 </p>
+                        <p>+(966) 565609231 </p>
                     </div>
                     <!---Adress and box -->
                 </div>
@@ -238,13 +142,15 @@
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">About us</a>
+                        <a href="#aboutUs">About us</a>
                     </li>
+                    <% if user_signed_in? %>
+                        <li class="nav-item">
+                            <%= link_to 'Events', events_path,class:"nav-link "%> 
+                        </li>
+                     <% end%>
                     <li>
-                        <a href="#">Events</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -252,7 +158,6 @@
     </div>
 </div>
 <!--footer end -->
-
-
+    
   </body>
 </html>

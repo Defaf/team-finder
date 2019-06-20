@@ -1,16 +1,142 @@
 
-<table>
-    <tr>
-        <th> Name </th>
-        <th> Description </th>
-        <th> Date </th>
-    </tr>
-    <% @events.each do |event|  %>
-        <tr>
-        <td> <%= event.nameEvent %> </td>
-        <td> <%= event.description %> </td>
-        <td> <%= event.date %> </td>
-        <td><%= link_to 'See more..', event %>  </td>
-    </tr>
-    <% end%>
-</table>
+<!--cover section -->
+<section id="home" class="home-cover">
+    <div class="cover_slider owl-carousel owl-theme">
+        <%= image_tag ("cover.jpg") ,class:"cover_item" %>
+             <div class="slider_content">
+                <div class="slider-content-inner">
+                    <div class="container">
+                        <div class="slider-content-center uppercase">
+                            <h2 class="cover-title "> Prepare yourself for the </h2>
+                            <strong class="cover-subtitle">Events and Hackathons</strong>
+                            <p class="cover-ad">  Make your team now !! </p>
+                            <br>
+                            
+                            <% if user_signed_in? %>
+        
+                            <% else %>
+                            <%= link_to "Sign up",  new_user_registration_path,  class:" btn btn-primary btn-rounded" %>
+                            <%= link_to "Sign in",  new_user_session_path,  class:" btn btn-primary btn-rounded" %>
+                            <% end %>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--cover section slider end -->
+
+
+<!-- Events slider -->
+
+<section class="container-new_event">
+    <div class="section_title">
+            <h3 class="title"> New Events </h3>
+        </div>
+    <div class="slider">
+        <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>    
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>    
+        <div class="slider__inner">
+
+            <% @events.each do |event|  %>
+
+                <div class="slider__contents">
+                <%= link_to  event do %>
+                    <h4 class="slider__caption"><%= event.nameEvent %> </h4>
+                    <p class="slider__txt"><%= event.date %> </p>
+                <% end%>
+                </div>
+
+            <% end%>
+        </div>
+    </div>
+</section>
+
+<!-- event slider end  -->
+
+<!--about us -->
+<section class="container-about" id="aboutUs">
+    <div class="section_title">
+        <h3 class="title"> About Us </h3>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <p>
+              We are a startup for entertainment, want to make the participation and organizing in entertainmnets event 
+              easier, creative and faster than before.            
+            </p>
+        </div>
+        <div class="col-12 col-md-6">
+            <p>
+            if you are looking to make an event and want to invite the people or if you are an intersting 
+                with an event and want to participate and looking for a team so, you are in the right place. 
+            </p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!--event features-->
+    <div class="row justify-content-center mt30">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="icon_box_one">
+                <i class="lnr lnr-mic"></i>
+                <div class="content">
+                    <h4>Create Event</h4>
+                    <p>
+                    if you are an organization or comapny and want to invite people to your event 
+                        just add your event information and let the other work to us.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="icon_box_one">
+                <i class="lnr lnr-rocket"></i>
+                <div class="content">
+                    <h4>Make a team</h4>
+                    <p>
+                    if you interst with one of the event in our site and you want to colaboraite with different peple 
+                        just join to the event you want and create a new team for you. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="icon_box_one">
+                <i class="lnr lnr-bullhorn"></i>
+                <div class="content">
+                    <h4>Join to a team</h4>
+                    <p>
+                    if you are looking to participate and you don't have any team, don't worry you can join to 
+                        any team in the event you want by doning one step - Click Join to Team Button - 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="icon_box_one">
+                <i class="lnr lnr-clock"></i>
+                <div class="content">
+                    <h4>Enjoy !!</h4>
+                    <p>
+                    Great !! wheather if you're an event organizer, team leader or team member 
+                    remember to make new friends, make your social range bigger and have fun! 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--event features end-->
+</section>
+<!--about the event end -->
+
+<br><br>

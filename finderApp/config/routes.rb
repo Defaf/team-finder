@@ -16,4 +16,10 @@ Rails.application.routes.draw do
 =end
   get "/home", to: "home#index"
   root to: "home#index"
+
+  #get "/account", to: "home#account",  as: "account" # account_path(account)
+  #get "/login", to: "home#login",  as: "login" # login_path(account)
+  #get "/signup", to: "home#signup",  as: "signup" # signup_path(account)
+
+
 end

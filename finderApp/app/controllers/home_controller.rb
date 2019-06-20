@@ -4,4 +4,13 @@ class HomeController < ApplicationController
         @events = Event.all
     end 
     
+    def account
+    end
+
+    def login
+    end
+
+    def signup
+    end 
+    
 end 
