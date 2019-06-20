@@ -1,39 +1,47 @@
-<p id="notice"><%= notice %></p>
+<section class="show_margin">
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Captain:</strong>
-  <%= @team.user.email %>
-</p>
-<p>
-  <strong>Members:</strong>
-  <%= @team.num_members %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @team.name %>
+    </p>
 
-<p>
-  <strong>Event:</strong>
-  <%= @team.event_id %>
-</p>
+    <p>
+      <strong>Captain:</strong>
+      <%= @team.user.email %>
+    </p>
+    <p>
+      <strong>Members:</strong>
+      <%= @team.num_members %>
+    </p>
 
-<p>Team Members</p>
-<ul>
-  <% @team.members.each do |member| %>
-    <li><%= member.user.email %> </li>
-  <% end %>
-</ul>
+    <p>
+      <strong>Event:</strong>
+      <%= @team.event_id %>
+    </p>
 
-<% if @team.user_id == current_user.id  %>
-  <%= link_to 'Edit', edit_event_team_path(@event, @team) %> |
-  <%= link_to 'Destroy', event_team_path(@event, @team), method: :delete, data: { confirm: 'Are you sure?' } %> |
-  <%= link_to 'Back', event_teams_path(@event) %>
-<% else%>
-
-  <%= link_to 'Join', event_team_members_path(@event, @team), {method: :post}	 %>
-  <%= link_to 'Back', event_teams_path(@event) %>
-<% end%>
+    <p>Team Members</p>
+    <ul>
+      <% @team.members.each do |member| %>
+        <li><%= member.user.email %> </li>
+      <% end %>
+    </ul>
+</section>
+<br>
+<section class="margin-btn">
+    <% if @team.user_id == current_user.id  %>
+      <%= link_to 'Edit', edit_event_team_path(@event, @team), class:"btn btn-primary"%> 
+      <div class="btn btn-primary">
+        <%= link_to 'Destroy', event_team_path(@event, @team), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    </div>
+      <%= link_to 'Back', event_teams_path(@event), class:"btn btn-primary" %>
+    <% else%>
+      <div class="btn btn-primary">
+          <%= link_to 'Join', event_team_members_path(@event, @team), {method: :post} %>
+      </div>
+      <%= link_to 'Back', event_teams_path(@event), class:"btn btn-primary" %>
+    <% end%>
+</section>
 
 

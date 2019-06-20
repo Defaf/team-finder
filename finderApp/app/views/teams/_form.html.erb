@@ -1,27 +1,32 @@
-<%= form_for [@event, @team] do |form| %>
-  <% if team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+<div class="form-container col-12 col-md-8">
+  <%= form_for [@event, @team] do |form| %>
+    <% if team.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-      <ul>
-      <% team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% team.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :Team_name %>
+      <%= form.text_field :name, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :number_of_members %>
+      <%= form.number_field :num_members , class:"form-control" %>
+    </div>
+
+    <br><br>
+
+    <div class="actions">
+      <%= form.submit "Create team", class:"btn btn-primary" %>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :Team_name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :number_of_members %>
-    <%= form.number_field :num_members %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

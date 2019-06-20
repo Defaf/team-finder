@@ -1,32 +1,42 @@
-<p id="notice"><%= notice %></p>
+<p id="notice "><%= notice %></p>
 
-<h1>Teams</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Members</th>
-      <th>Event</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="col-6 container">
+    <h1 class="">Teams</h1>
+    <%= link_to 'New Team', new_event_team_path(@event), class:"btn btn-primary " %> 
+    <%= link_to 'Back', event_path(@event), class:"btn btn-primary" %>
+</section>
 
-  <tbody>
-    <% @teams.each do |team| %>
-      <tr>
-        <td><%= team.name %></td>
-        <td><%= team.num_members %></td>
-        <td><%= team.event_id %></td>
-        <td><%= link_to 'Show', event_team_path(@event, team) %></td>
-        <td><%= link_to 'Join', event_team_members_path(@event, team), {method: :post}	 %></td>
+<br> 
+
+<section class="col-6 container ">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Members</th>
+          <th scope="col">Event</th>
+          <th colspan="3"></th>
         </tr>
-    <% end %> 
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+        <% @teams.each do |team| %>
+          <tr>
+            <td><%= team.name %></td>
+            <td><%= team.num_members %></td>
+            <td><%= team.event_id %></td>
+            <td><%= link_to event_team_path(@event, team) do %>
+              <%=  image_tag ('icon_show.png' ), class:"icon" %>
+            <% end %></td>
 
-<%= link_to 'New Team', new_event_team_path(@event) %> |
-<%= link_to 'Back', event_path(@event) %>
+            <td><%= link_to  event_team_members_path(@event, team), {method: :post} do %>
+              <%=  image_tag ('icon_join.png' ), class:"icon" %>
+            <% end %></td>
+
+            </tr>
+        <% end %> 
+      </tbody>
+    </table>
+</section>
 
