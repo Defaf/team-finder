@@ -1,20 +1,17 @@
 <h1>Editing Event</h1>
 <% if user_signed_in? %>
     <%= render 'form', event: @event %>
-
-    <div class="show_btn_postion">
-        <%= link_to 'Show', @event , class:"btn btn-primary" %> 
-    </div>
-    <div class="back_btn_postion">
-        <%= link_to 'Back', events_path, class:"btn btn-primary" %>
-    <//div>
-    
+    <br>
+    <%= link_to 'Show', @event , class:"btn-primary show_btn_postion" %> 
+    <%= link_to 'Back', events_path, class:"btn-primary back_btn_postion" %>
 <% else %>
 
     <p>you have to logged in </p>
-    <%= link_to 'Back', event_path, class:"btn btn-primary" %>
-    <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-primary" %>
-    <%= link_to "Sing in", new_user_session_path, class:"btn btn-primary" %>
+    <%= link_to 'Back', event_path, class:"btn-primary" %>
+    <%= link_to "Sign Up", new_user_registration_path, class:"bbtn-primary" %>
+    <%= link_to "Sing in", new_user_session_path, class:"btn-primary" %>
 <% end %>
+
+
 
 
