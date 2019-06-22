@@ -1,4 +1,5 @@
 <div class="form-container col-12 col-md-8">
+<section class="">
   <%= form_for [@event, @team] do |form| %>
     <% if team.errors.any? %>
       <div id="error_explanation">
@@ -28,5 +29,6 @@
       <%= form.submit "Create team", class:"btn btn-primary" %>
     </div>
   <% end %>
+  </section>
 </div>
 

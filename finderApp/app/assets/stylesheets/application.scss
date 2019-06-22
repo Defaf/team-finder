@@ -11,11 +11,16 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+ /*---------------------------------------------------
+ 1. LIBRARIES 
+ -----------------------------------------------------*/
  @import "bootstrap";
  @import "events";
  @import "scaffolds";
+
 /*  ----------------------------------------------------
-1. GENERAL
+2. GENERAL
 -------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900");
 
@@ -26,7 +31,6 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #838383;
   font-style: normal;
-  overflow-x: hidden;
   margin: 33px 0px 0px 0px;
 }
 
@@ -37,35 +41,31 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
 }
 
-h1, .h1 {
+h1 {
   font-size: 48px;
   margin-bottom: 25px;
 }
 
-h2, .h2 {
+h2 {
   font-size: 42px;
   margin-bottom: 25px;
 }
 
-h3, .h3 {
+h3 {
   font-size: 36px;
   margin-bottom: 25px;
 }
 
-h4, .h4 {
+h4 {
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-h5, .h5 {
+h5 {
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-h6, .h6 {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 
 p {
   font-size: 14px;
@@ -97,12 +97,6 @@ a:active {
   color: #838383;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-}
-
-ul.nosyely_list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 .section_title {
@@ -150,193 +144,74 @@ img {
 }
 
 /*  ----------------------------------------------------
-2. HEADER
+3. HEADER
 -------------------------------------------------------- */
 header {
     min-height: 50px;
     padding: 0;
-    margin: 0;
-    margin-top: 0px;
-    -webkit-transition: all ease-in-out 0.4s;
-    transition: all ease-in-out 0.4s;
+    margin: 0px;
     background-color: black;
-
   }
-  header .menu {
-    position: relative;
-  }
-  header .logo {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  header .logo img {
-    float: left;
-    max-width: 160px;
-    margin-right: 3px;
-  }
-  
-  header ul.menu li a.nav-link {
-    padding: 20px 12px !important;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: 400;
-    display: block;
-    text-transform: uppercase;
-    color: #ffffff;
-  }
+header .menu {
+  position: relative;
+}
+header .logo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+header .logo img {
+  float: left;
+  max-width: 160px;
+  margin-right: 3px;
+}
+   
+header ul.menu li a.nav-link {
+  padding: 20px 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  display: block;
+  text-transform: uppercase;
+  color: #ffffff;
+}
   header ul.menu li a.nav-link:hover {
     color: #f50136;
-  }
-  header ul.menu .search_btn {
-    padding: 16px 8px !important;
-    color: #ffffff;
-  }
-  header ul.menu .search_btn a {
-    font-size: 30px;
-  }
-  header li ul {
-    display: none;
-    visibility: hidden;
-  }
-  header li ul.sub_menu {
-    position: absolute;
-    background: #333333;
-    min-width: 250px;
-    padding: 10px;
-    border-radius: 3px;
-    -webkit-box-shadow: 1px 1px 42px rgba(0, 0, 0, 0.08);
-            box-shadow: 1px 1px 42px rgba(0, 0, 0, 0.08);
-  }
-  header li ul.sub_menu li {
-    display: block;
-  }
-  header li ul.sub_menu li a {
-    color: #999999 !important;
-    padding: 7px 10px;
-    display: block;
-    margin-left: 0;
-    line-height: 22px;
-    word-break: break-word;
-  }
-  header li ul.sub_menu li a:hover {
-    color: #ffffff !important;
-    transform: translate3d(2px, 0, 0);
-    -webkit-transform: translate3d(2px, 0, 0);
-  }
-  
-  .navbar {
-    padding: 0;
-  }
-  
-  header.sticky_header {
-    background-color: #18181c;
-    margin: 0;
-    padding: 5px;
-    -webkit-box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
-    box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
-    -webkit-transition: all ease-in-out 0.4s;
-    transition: all ease-in-out 0.4s;
-  }
-  
-  .navbar-toggler {
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    padding: 5px 10px;
-    font-size: 22px;
-    outline: 0 !important;
-    -webkit-box-shadow: 0 0 0 !important;
-            box-shadow: 0 0 0 !important;
-    cursor: pointer;
-    border-radius: 2px;
-  }
-  .container{
-
-  }
+}
+header li ul {
+  display: none;
+}
+.navbar {
+  padding: 0;
+}
 
 /*  ----------------------------------------------------
-3 user login and sign up
+4. LOG IN AND SIGN UP
 -------------------------------------------------------- */
-
-
-/* Container */
 .account_container {
   position: relative;
   width: 35%;
   margin: 80px auto 100px;
-.btn_account{
-  padding-right:0px;
-}
-.acc_title{
-  margin-top: 15px;
-  color:#f50136;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-  &.active {
-    .card {
-      &:first-child {
-        background: darken($white, 5%);
-        margin: 0 15px;
-      }
-
-      &:nth-child(2) {
-        background: darken($white, 2%);
-        margin: 0 10px;
-      }
-
-      &.alt {
-        top: 20px;
-        right: 0;
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        border-radius: 5px;
-        padding: 60px 0 40px;
-        overflow: hidden;
-
-        .title{
-          left: 0;
-          opacity: 1;
-          visibility: visible;
-          transition: .3s ease;
-        }
-
-        .title {
-          transition-delay: .3s;
-        }
-
-        .input-container {
-          transition-delay: .4s;
-
-          &:nth-child(2) {
-            transition-delay: .5s;
-          }
-
-          &:nth-child(3) {
-            transition-delay: .6s;
-          }
-        }
-      }
-    }
+  .btn_account{
+    padding-right:0px;
+  }
+  .acc_title{
+    margin-top: 15px;
+    color:#f50136;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 }
 
-
-
 /*  ----------------------------------------------------
-4 welcome user 
+5. USER GREETING  
 -------------------------------------------------------- */
 .welcome_user{
   margin-top: 0px;
 }
-
 .welcome_user .container{
   margin-left: 60px;
 }
-.welcome_user .container h5{
+.welcome_user .container h5, .link_color{
   color: white ;
-}
-.welcome_user .link_color{
-  color: white;
 }
 .welcom_message{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -344,8 +219,9 @@ header {
 .welcom_message span{
   color: #f50136;
 }
+
   /*  ----------------------------------------------------
-4 buttons
+6. BUTTONS
 -------------------------------------------------------- */
 .btn {
   font-size: 12px;
@@ -355,12 +231,8 @@ header {
   font-weight: 500;
   padding: 12px 40px;
   border-radius: 0;
-  outline: 0 !important;
   border: none;
-  cursor: pointer;
   background-color: #18181c;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
 }
 .btn:hover {
   color: #18181c;
@@ -373,29 +245,22 @@ header {
   -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
           box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-
 .btn-sm {
   padding: 10px 20px;
 }
-
 .btn-lg {
   padding: 18px 50px;
 }
-
 .btn_center {
   margin: 0 auto;
   display: block;
 }
-
 .btn.btn-shadow {
-  -webkit-box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.09);
 }
 .btn.btn-shadow:hover {
-  -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.09);
 }
-
 .btn-rounded {
   border-radius: 50px;
 }
@@ -404,63 +269,37 @@ header {
   background-color: #f50136;
   border: solid 1px #f50136;
   color: #ffffff;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
 }
 .btn-primary:hover {
   background-color: #18181c;
-  color: #ffffff;
   border: solid 1px #18181c;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-
-.btn-primary-outline {
-  background-color: transparent;
-  border: solid 1px #f50136;
-  color: #f50136;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-}
-.btn-primary-outline:hover {
-  background-color: #f50136;
   color: #ffffff;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
 }
 
 .btn-light {
   background-color: #ffffff;
   border: solid 1px #ffffff;
   color: #18181c;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
 }
 .btn-light:hover {
-  color: #ffffff;
   border: solid 1px #18181c;
   background-color: #18181c;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  color: #ffffff;
 }
 
 .btn-dark {
   background-color: #333333;
   border: solid 1px #18181c;
   color: #ffffff;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
 }
 .btn-dark:hover {
-  color: #18181c;
   border: solid 1px #ffffff;
   background-color: #ffffff;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  color: #18181c;
 }
 
 /*  ----------------------------------------------------
-5 Cover
+7. HOME COVER 
 -------------------------------------------------------- */
 .home-cover {
   position: relative;
@@ -512,7 +351,7 @@ header {
 }
 
 /*  ----------------------------------------------------
-6 New Events slider and About us 
+8. EVENTS SLIDER AND ABOUT US 
 -------------------------------------------------------- */
 .container-new_event{
   margin: 180px 150px 0px 150px;
@@ -522,7 +361,7 @@ header {
 }
 
 /*  ----------------------------------------------------
-7 Footer
+9. FOOTER
 -------------------------------------------------------- */
 footer {
   padding: 50px 0 100px;
@@ -618,18 +457,12 @@ footer .newsletter_form .form-control {
 .copyright_footer ul.footer_menu li a:hover {
   color: #ffffff;
 }
-
-@media (max-width: 767px) {
-  .copyright_footer {
-    text-align: center;
-  }
-}
 .footer_logo{
   height: 80px;
   width: 120px;
 }
 /*  ----------------------------------------------------
-7 Margin Formes
+`0. Forms
 -------------------------------------------------------- */
 .form-container{
   margin: 0px 70px 0px 170px; 
@@ -666,8 +499,16 @@ footer .newsletter_form .form-control {
 .btn_container{
   margin-top:25px;
 }
+.page_name{
+  margin-top: 70px;
+}
+.page_name2{
+  margin-top: 70px;
+  margin-left: 190px;
+  color:#f50136;
+}
 /*  ----------------------------------------------------
-7 Tables
+11. TABLES
 -------------------------------------------------------- */
 .icon{
   width: 30px;
@@ -675,14 +516,14 @@ footer .newsletter_form .form-control {
 }
 
 /*  ----------------------------------------------------
-7 margin and padding content
+1.2 MARGIN PADDING CONTENT
 -------------------------------------------------------- */
 .show_margin{
   margin-left: 400px;
 }
 
 /*  ----------------------------------------------------
-7 content slider 
+13. EVENT SLIDER 
 -------------------------------------------------------- */
 .slider {
   margin: 10px 20px 25px 20px;

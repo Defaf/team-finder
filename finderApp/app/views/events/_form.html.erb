@@ -1,4 +1,5 @@
 <div class="form-container col-12 col-md-8">
+<section class="">
   <%= form_with(model: event, local: true) do |form| %>
     <% if event.errors.any? %>
       <div id="error_explanation">
@@ -52,5 +53,5 @@
       <%= form.submit "Submit", class:"btn btn-primary" %>      
     </div>
   <% end %>
-
+</div>
 </div>
